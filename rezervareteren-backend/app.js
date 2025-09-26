@@ -28,33 +28,33 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('frontend-files'));
 
-// const db = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   port: process.env.DB_PORT,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASSWORD,
-//   database: process.env.DB_NAME
-// });
-
-// db.connect((err) => {
-//   if (err) {
-//     console.error('Database connection error:', err);
-//     return;
-//   }
-//   console.log('Connected to Railway MySQL!');
-// });
-
 const db = mysql.createConnection({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE
+  host: process.env.DB_HOST,
+  port: process.env.DB_PORT,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
-  
+
 db.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to MySQL database!');
+  if (err) {
+    console.error('Database connection error:', err);
+    return;
+  }
+  console.log('Connected to Railway MySQL!');
 });
+
+// const db = mysql.createConnection({
+//     host: process.env.HOST,
+//     user: process.env.USER,
+//     password: process.env.PASSWORD,
+//     database: process.env.DATABASE
+// });
+  
+// db.connect((err) => {
+//   if (err) throw err;
+//   console.log('Connected to MySQL database!');
+// });
 
 app.post('/login', (req, res) => {
   const { email, password } = req.body;
