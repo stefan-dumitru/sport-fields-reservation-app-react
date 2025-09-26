@@ -74,7 +74,7 @@ export default function VirtualAssistant() {
 
     const params = new URLSearchParams(userInfo).toString();
     const eventSource = new EventSource(
-      `http://localhost:3000/get-training-plan?${params}`
+      `https://sport-fields-reservation-app-react-production.up.railway.app/get-training-plan?${params}`
     );
 
     eventSource.onmessage = (event) => {

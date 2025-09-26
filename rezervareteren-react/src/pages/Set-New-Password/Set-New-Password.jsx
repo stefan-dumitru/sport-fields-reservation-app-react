@@ -45,7 +45,7 @@ export default function SetNewPassword() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/confirm-password-reset",
+        "https://sport-fields-reservation-app-react-production.up.railway.app/confirm-password-reset",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

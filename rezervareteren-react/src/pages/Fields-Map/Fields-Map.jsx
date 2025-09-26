@@ -18,7 +18,7 @@ export default function FieldsMap() {
     (async function loadGoogleMapsAPI() {
       try {
         const res = await fetch(
-          "http://localhost:3000/get-google-maps-key"
+          "https://sport-fields-reservation-app-react-production.up.railway.app/get-google-maps-key"
         );
         const data = await res.json();
         const apiKey = data.apiKey;
@@ -109,7 +109,7 @@ export default function FieldsMap() {
     showUserLocation();
 
     try {
-      const res = await fetch("http://localhost:3000/get-sports-fields");
+      const res = await fetch("https://sport-fields-reservation-app-react-production.up.railway.app/get-sports-fields");
       const fieldsArray = await res.json();
 
       setFields(fieldsArray);
@@ -120,7 +120,7 @@ export default function FieldsMap() {
 
         try {
           const coordsRes = await fetch(
-            `http://localhost:3000/get-coordinates?address=${encodeURIComponent(address)}`
+            `https://sport-fields-reservation-app-react-production.up.railway.app/get-coordinates?address=${encodeURIComponent(address)}`
           );
           const coordsData = await coordsRes.json();
 
@@ -343,7 +343,7 @@ export default function FieldsMap() {
       return;
     }
 
-    fetch(`http://localhost:3000/get-field-reservations/${id_teren}`)
+    fetch(`https://sport-fields-reservation-app-react-production.up.railway.app/get-field-reservations/${id_teren}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
@@ -520,7 +520,7 @@ export default function FieldsMap() {
           const currentFieldId = cell.getAttribute("data-field-id");
 
           try {
-            const response = await fetch(`http://localhost:3000/get-user-reservations?username=${username}&date=${selectedDate}`);
+            const response = await fetch(`https://sport-fields-reservation-app-react-production.up.railway.app/get-user-reservations?username=${username}&date=${selectedDate}`);
             const userReservations = await response.json();
 
             if (userReservations.result.length >= 3) {
@@ -536,7 +536,7 @@ export default function FieldsMap() {
           }
 
           try {
-            const response = await fetch(`http://localhost:3000/get-user-reservations-for-field?username=${username}&date=${selectedDate}&fieldId=${currentFieldId}`);
+            const response = await fetch(`https://sport-fields-reservation-app-react-production.up.railway.app/get-user-reservations-for-field?username=${username}&date=${selectedDate}&fieldId=${currentFieldId}`);
             const fieldReservations = await response.json();
 
             if (fieldReservations.result.length >= 1) {
@@ -567,7 +567,7 @@ export default function FieldsMap() {
             };
 
             try {
-              const response = await fetch("http://localhost:3000/make-reservation", {
+              const response = await fetch("https://sport-fields-reservation-app-react-production.up.railway.app/make-reservation", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(reservationDetails),
@@ -578,7 +578,7 @@ export default function FieldsMap() {
                 alert("Rezervarea a fost facuta cu succes!");
 
                 try {
-                  const paymentResponse = await fetch("http://localhost:3000/create-checkout-session", {
+                  const paymentResponse = await fetch("https://sport-fields-reservation-app-react-production.up.railway.app/create-checkout-session", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

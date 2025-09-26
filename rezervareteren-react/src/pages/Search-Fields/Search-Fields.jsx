@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Search-Fields.css";
 
-const API_BASE = "http://localhost:3000";
+const API_BASE = "https://sport-fields-reservation-app-react-production.up.railway.app";
 
 function SearchFields() {
   // form state

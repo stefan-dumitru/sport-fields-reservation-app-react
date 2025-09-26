@@ -21,7 +21,7 @@ function MyProfile() {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/get-user-profile/${username}`
+          `https://sport-fields-reservation-app-react-production.up.railway.app/get-user-profile/${username}`
         );
         const data = await response.json();
 
@@ -56,7 +56,7 @@ function MyProfile() {
     const username = localStorage.getItem("username");
     try {
       const response = await fetch(
-        `http://localhost:3000/update-favourite-sports/${username}`,
+        `https://sport-fields-reservation-app-react-production.up.railway.app/update-favourite-sports/${username}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

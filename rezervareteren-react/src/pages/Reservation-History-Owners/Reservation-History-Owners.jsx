@@ -45,7 +45,7 @@ export default function ReservationHistoryOwners() {
   const fetchFieldReservations = async (fieldId) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/get-field-reservations/${fieldId}`
+        `https://sport-fields-reservation-app-react-production.up.railway.app/get-field-reservations/${fieldId}`
       );
       const data = await response.json();
 
@@ -72,7 +72,7 @@ export default function ReservationHistoryOwners() {
 
     try {
       const response = await fetch(
-        "http://localhost:3000/get-owner-fields",
+        "https://sport-fields-reservation-app-react-production.up.railway.app/get-owner-fields",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -120,7 +120,7 @@ export default function ReservationHistoryOwners() {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/cancel-reservation/${modalData.id}`,
+        `https://sport-fields-reservation-app-react-production.up.railway.app/cancel-reservation/${modalData.id}`,
         { method: "DELETE" }
       );
       const data = await res.json();

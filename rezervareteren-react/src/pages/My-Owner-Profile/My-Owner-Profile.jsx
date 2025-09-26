@@ -16,7 +16,7 @@ const MyOwnerProfile = () => {
     const fetchProfile = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/get-user-profile/${username}`
+          `https://sport-fields-reservation-app-react-production.up.railway.app/get-user-profile/${username}`
         );
         const data = await response.json();
 

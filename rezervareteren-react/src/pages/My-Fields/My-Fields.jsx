@@ -19,7 +19,7 @@ const MyFields = () => {
   const fetchMyFields = async (username) => {
     try {
       const response = await fetch(
-        `http://localhost:3000/get-owner-sports-fields/${username}`
+        `https://sport-fields-reservation-app-react-production.up.railway.app/get-owner-sports-fields/${username}`
       );
       const data = await response.json();
       setFields(data);
@@ -32,7 +32,7 @@ const MyFields = () => {
   const saveField = async (id_teren, pret_ora, program) => {
     try {
       const response = await fetch(
-        "http://localhost:3000/update-field",
+        "https://sport-fields-reservation-app-react-production.up.railway.app/update-field",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -60,7 +60,7 @@ const MyFields = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/delete-field/${id_teren}`,
+        `https://sport-fields-reservation-app-react-production.up.railway.app/delete-field/${id_teren}`,
         {
           method: "DELETE",
         }

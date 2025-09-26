@@ -36,7 +36,7 @@ function AddField() {
     if (!username) return;
 
     try {
-      const response = await fetch("http://localhost:3000/add-field", {
+      const response = await fetch(`https://sport-fields-reservation-app-react-production.up.railway.app/add-field`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

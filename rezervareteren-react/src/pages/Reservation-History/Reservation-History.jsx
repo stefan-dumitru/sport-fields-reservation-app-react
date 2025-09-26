@@ -23,7 +23,7 @@ function ReservationHistory() {
 
       try {
         const response = await fetch(
-          `http://localhost:3000/get-reservations/${username}`
+          `https://sport-fields-reservation-app-react-production.up.railway.app/get-reservations/${username}`
         );
         const data = await response.json();
 
@@ -69,7 +69,7 @@ function ReservationHistory() {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/cancel-reservation/${id}`,
+        `https://sport-fields-reservation-app-react-production.up.railway.app/cancel-reservation/${id}`,
         { method: "DELETE" }
       );
       const data = await response.json();
