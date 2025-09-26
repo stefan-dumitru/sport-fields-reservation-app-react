@@ -31,8 +31,8 @@ function ReservationHistory() {
 
           const formatted = data.reservations.map((reservation) => {
             const formattedDate = addHours(new Date(reservation.data_rezervare), 3).toISOString().split("T")[0];
-            const startTime = addHours(new Date(reservation.ora_inceput), 3).toTimeString().split(" ")[0];
-            const endTime = addHours(new Date(reservation.ora_sfarsit), 3).toTimeString().split(" ")[0];
+            const startTime = new Date(reservation.ora_inceput).toTimeString().split(" ")[0];
+            const endTime = new Date(reservation.ora_sfarsit).toTimeString().split(" ")[0];
 
             const fullStartDate = new Date(reservation.ora_inceput);
             const isFuture = fullStartDate > new Date();
